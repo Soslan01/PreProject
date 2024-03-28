@@ -12,11 +12,27 @@ public class Util {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "sos100398";
 
-    public static Connection getConnection() {
+    private static Util instance;
+    private static Connection connection;
+
+    private Util() throws SQLException {
         try {
-            return DriverManager.getConnection(URL, USERNAME, PASSWORD);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            this.connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+        } catch (ClassNotFoundException e) {
+            System.out.println("Database Connection failed: " + e.getMessage());
         }
+    }
+    public static Connection getConnection() {
+        return connection;
+    }
+
+    public static Util getInstance() throws SQLException {
+        if (instance == null) {
+            instance = new Util();
+        } else if (instance.getConnection().isClosed()) {
+            instance = new Util();
+        }
+        return instance;
     }
 }
