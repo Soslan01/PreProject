@@ -942,7 +942,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Charset>utf8mb4</Charset>
     </collation>
     <schema id="274" parent="1" name="MyDBTest">
-      <LastIntrospectionLocalTimestamp>2024-03-28.14:12:46</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-04-01.20:26:59</LastIntrospectionLocalTimestamp>
       <CollationName>utf8_general_ci</CollationName>
     </schema>
     <schema id="275" parent="1" name="information_schema">
@@ -980,30 +980,62 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8_general_ci</CollationName>
     </table>
-    <column id="284" parent="283" name="id">
+    <table id="284" parent="274" name="Users">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8_general_ci</CollationName>
+    </table>
+    <column id="285" parent="283" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="285" parent="283" name="name">
+    <column id="286" parent="283" name="name">
       <DasType>varchar(64)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="286" parent="283" name="lastName">
+    <column id="287" parent="283" name="lastName">
       <DasType>varchar(64)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="287" parent="283" name="age">
+    <column id="288" parent="283" name="age">
       <DasType>int|0s</DasType>
       <Position>4</Position>
     </column>
-    <index id="288" parent="283" name="PRIMARY">
+    <index id="289" parent="283" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="289" parent="283" name="PRIMARY">
+    <key id="290" parent="283" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="291" parent="284" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="292" parent="284" name="name">
+      <DasType>varchar(64)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="293" parent="284" name="lastName">
+      <DasType>varchar(64)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="294" parent="284" name="age">
+      <DasType>int|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <index id="295" parent="284" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="296" parent="284" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
